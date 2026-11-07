@@ -26,7 +26,7 @@ CColStore::Initialise(void)
 		ms_pColPool = new CPool<ColDef,ColDef>(COLSTORESIZE, "CollisionFiles");
 	AddColSlot("generic");	// slot 0. not streamed
 #ifndef MASTER
-	VarConsole.Add("Display collision in memory", &bDispColInMem, true);
+	VarConsole.BAdd("Display collision in memory", &bDispColInMem, true);
 #endif
 }
 

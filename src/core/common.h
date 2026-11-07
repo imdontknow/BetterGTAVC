@@ -24,7 +24,9 @@
 #if defined ANDROID
 #include <android/log.h>
 #endif
-
+#if USE_D3D9
+#include <d3d9.h>
+#endif
 #ifdef __MWERKS__
 #define AUDIO_MSS
 #define RWLIBS // codewarrior doesn't support project level defines - so not even this is enough, but still catches most ifdefs
@@ -39,7 +41,7 @@
 #define WITHWINDOWS
 #endif
 
-#if defined _WIN32 && defined WITHWINDOWS && !defined _INC_WINDOWS
+#if defined _WIN32 || defined WITHWINDOWS || !defined _INC_WINDOWS
 #include <windows.h>
 #endif
 
@@ -60,8 +62,8 @@
 #include <dinput.h>
 #endif
 
-#include <rwcore.h>
-#include <rpworld.h>
+#include <fakerw/rwcore.h>
+#include <fakerw/rpworld.h>
 
 // gotta put this somewhere
 #ifdef LIBRW
@@ -126,8 +128,8 @@ typedef ptrdiff_t ssize_t;
 
 #include "config.h"
 
-#include <rphanim.h>
-#include <rpskin.h>
+#include <fakerw/rphanim.h>
+#include <fakerw/rpskin.h>
 
 #ifdef __GNUC__
 #define TYPEALIGN(n) __attribute__ ((aligned (n)))
@@ -153,8 +155,8 @@ inline uint32 ldb(uint32 p, uint32 s, uint32 w)
 	return w>>p & (1<<s)-1;
 }
 
-#include "skeleton.h"
-#include "Draw.h"
+#include "skel/skeleton.h"
+#include "renderer/Draw.h"
 
 #if defined(PROPER_SCALING)
 	#ifdef FORCE_PC_SCALING
@@ -222,17 +224,17 @@ inline uint32 ldb(uint32 p, uint32 s, uint32 w)
 #define SCALE_AND_CENTER_X(x) SCREEN_STRETCH_X(x)
 #endif
 
-#include "maths.h"
-#include "Vector.h"
+#include "math/maths.h"
+#include "math/Vector.h"
 #ifdef GTA_PS2
 #include "VuVector.h"
 #define CVUVECTOR CVuVector
 #else
 #define CVUVECTOR CVector
 #endif
-#include "Vector2D.h"
-#include "Matrix.h"
-#include "Rect.h"
+#include "math/Vector2D.h"
+#include "math/Matrix.h"
+#include "math/Rect.h"
 
 class CRGBA
 {
@@ -398,7 +400,7 @@ template<int s, int t> struct check_size {
 
 #define ABS(a)  (((a) < 0) ? (-(a)) : (a))
 #define norm(value, min, max) (((value) < (min)) ? 0 : (((value) > (max)) ? 1 : (((value) - (min)) / ((max) - (min)))))
-#define lerp(norm, min, max) ( (norm) * ((max) - (min)) + (min) )
+#define gtalerp(norm, min, max) ( (norm) * ((max) - (min)) + (min) )
 
 #define STRINGIFY(x)                    #x
 #define STR(x)                          STRINGIFY(x)

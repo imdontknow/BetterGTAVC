@@ -1,9 +1,9 @@
 #ifndef __GTA_FLUFF_H__
 #define __GTA_FLUFF_H__
 #include "common.h"
-#include "Vector.h"
-#include "Object.h"
-#include "Plane.h"
+#include "math/Vector.h"
+#include "objects/Object.h"
+#include "vehicles/Plane.h"
 
 enum {
 	SCRIPT_PATH_DISABLED = 0,

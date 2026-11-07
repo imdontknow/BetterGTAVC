@@ -1,11 +1,11 @@
 #define WITHWINDOWS
 #include "common.h"
-#include "crossplatform.h"
+#include "skel/crossplatform.h"
 
-#include "DMAudio.h"
-#include "Record.h"
+#include "audio/DMAudio.h"
+#include "control/Record.h"
 #include "Timer.h"
-#include "SpecialFX.h"
+#include "renderer/SpecialFX.h"
 
 uint32 CTimer::m_snTimeInMilliseconds;
 uint32 CTimer::m_snTimeInMillisecondsPauseMode = 1;
@@ -328,4 +328,3 @@ uint32 CTimer::GetCyclesPerFrame()
 {
 	return 20;
 }
-

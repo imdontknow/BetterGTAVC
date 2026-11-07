@@ -1,7 +1,7 @@
 #ifndef __GTA_COLSPHERE_H__
 #define __GTA_COLSPHERE_H__
 
-#include "SurfaceTable.h"
+#include "core/SurfaceTable.h"
 
 struct CSphere
 {

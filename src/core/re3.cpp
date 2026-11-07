@@ -9,47 +9,45 @@
 #pragma comment( lib, "Xinput.lib" )
 #endif
 #endif
-#include "Renderer.h"
-#include "Occlusion.h"
-#include "Credits.h"
+#include "renderer/Renderer.h"
+#include "renderer/Occlusion.h"
+#include "renderer/Credits.h"
 #include "Camera.h"
-#include "Weather.h"
-#include "Timecycle.h"
+#include "renderer/Weather.h"
+#include "renderer/Timecycle.h"
 #include "Clock.h"
 #include "World.h"
-#include "Vehicle.h"
-#include "ModelIndices.h"
+#include "vehicles/Vehicle.h"
+#include "modelinfo/ModelIndices.h"
 #include "Streaming.h"
-#include "Boat.h"
-#include "Heli.h"
-#include "Automobile.h"
-#include "Bike.h"
-#include "Console.h"
+#include "vehicles/Boat.h"
+#include "vehicles/Heli.h"
+#include "vehicles/Automobile.h"
+#include "vehicles/Bike.h"
+#include "renderer/Console.h"
 #include "Debug.h"
-#include "Hud.h"
-#include "SceneEdit.h"
+#include "renderer/Hud.h"
+#include "control/SceneEdit.h"
 #include "Pad.h"
-#include "PlayerPed.h"
+#include "peds/PlayerPed.h"
 #include "Radar.h"
-#include "debugmenu.h"
+#include "extras/debugmenu.h"
 #include "Frontend.h"
-#include "WaterLevel.h"
+#include "renderer/WaterLevel.h"
 #include "main.h"
 #include "Script.h"
-#include "MBlur.h"
-#include "postfx.h"
-#include "custompipes.h"
-#include "MemoryHeap.h"
+#include "renderer/MBlur.h"
+#include "extras/postfx.h"
+#include "extras/custompipes.h"
+#include "rw/MemoryHeap.h"
 #include "FileMgr.h"
-#include "Camera.h"
-#include "MBlur.h"
 #include "ControllerConfig.h"
-#include "CarCtrl.h"
-#include "Population.h"
+#include "control/CarCtrl.h"
+#include "peds/Population.h"
 #include "IniFile.h"
 #include "Zones.h"
 
-#include "crossplatform.h"
+#include "skel/crossplatform.h"
 
 #ifndef _WIN32
 #include "assert.h"
@@ -90,7 +88,7 @@ mysrand(unsigned int seed)
 }
 
 #ifdef CUSTOM_FRONTEND_OPTIONS
-#include "frontendoption.h"
+#include "extras/frontendoption.h"
 
 
 
@@ -195,7 +193,7 @@ CustomFrontendOptionsPopulate(void)
 
 #ifdef LOAD_INI_SETTINGS
 #define MINI_CASE_SENSITIVE
-#include "ini.h"
+#include "extras/ini.h"
 
 #ifdef __APPLE__
 static const char *

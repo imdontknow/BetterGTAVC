@@ -1,8 +1,8 @@
 #ifndef __GTA_CARCTRL_H__
 #define __GTA_CARCTRL_H__
 #include "PathFind.h"
-#include "Boat.h"
-#include "Vehicle.h"
+#include "vehicles/Boat.h"
+#include "vehicles/Vehicle.h"
 
 #define GAME_SPEED_TO_METERS_PER_SECOND 50.0f
 #define METERS_PER_SECOND_TO_GAME_SPEED (1.0f / GAME_SPEED_TO_METERS_PER_SECOND)

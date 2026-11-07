@@ -1,9 +1,9 @@
-#include "common.h"
+#include "core/common.h"
 #include "main.h"
 #include "Timer.h"
-#include "Sprite2d.h"
-#include "Text.h"
-#include "Font.h"
+#include "renderer/Sprite2d.h"
+#include "text/Text.h"
+#include "renderer/Font.h"
 #include "FrontEndControls.h"
 
 #define X SCREEN_SCALE_X

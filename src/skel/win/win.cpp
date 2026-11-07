@@ -29,7 +29,7 @@
 
 #define WM_GRAPHNOTIFY	WM_USER+13
 
-#ifndef USE_D3D9
+#if USE_D3D8
 #pragma comment( lib, "d3d8.lib" )
 #endif
 #pragma comment( lib, "ddraw.lib" )
@@ -50,6 +50,9 @@
 #include "skeleton.h"
 #include "platform.h"
 #include "crossplatform.h"
+#if USE_D3D9
+#include <d3d9.h>
+#endif
 
 #define MAX_SUBSYSTEMS		(16)
 
@@ -70,7 +73,6 @@ static RwBool useDefault;
 static const RwChar *AppClassName = RWSTRING("Grand theft auto 3");
 
 static psGlobalType PsGlobal;
-
 
 #define PSGLOBAL(var) (((psGlobalType *)(RsGlobal.ps))->var)
 

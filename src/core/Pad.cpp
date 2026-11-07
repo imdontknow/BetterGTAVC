@@ -1,7 +1,7 @@
 #define WITHDINPUT
 #include "common.h"
-#include "crossplatform.h"
-#include "platform.h"
+#include "skel/crossplatform.h"
+#include "skel/platform.h"
 #ifdef XINPUT
 #include <xinput.h>
 #if !defined(PSAPI_VERSION) || (PSAPI_VERSION > 1)
@@ -17,30 +17,27 @@
 #include "Frontend.h"
 #include "Camera.h"
 #include "Game.h"
-#include "CutsceneMgr.h"
-#include "Font.h"
-#include "Hud.h"
-#include "Text.h"
-#include "Timer.h"
-#include "Record.h"
+#include "animation/CutsceneMgr.h"
+#include "renderer/Font.h"
+#include "renderer/Hud.h"
+#include "text/Text.h"
+#include "control/Record.h"
 #include "World.h"
-#include "Vehicle.h"
-#include "Ped.h"
-#include "Population.h"
-#include "Record.h"
-#include "Replay.h"
-#include "Weather.h"
+#include "vehicles/Vehicle.h"
+#include "peds/Ped.h"
+#include "peds/Population.h"
+#include "control/Replay.h"
+#include "renderer/Weather.h"
 #include "Streaming.h"
-#include "PathFind.h"
+#include "control/PathFind.h"
 #include "Wanted.h"
-#include "WaterLevel.h"
+#include "renderer/WaterLevel.h"
 #include "General.h"
-#include "Fluff.h"
-#include "Gangs.h"
-#include "platform.h"
+#include "renderer/Fluff.h"
+#include "peds/Gangs.h"
 #include "Stats.h"
-#include "CarCtrl.h"
-#include "TrafficLights.h"
+#include "control/CarCtrl.h"
+#include "control/TrafficLights.h"
 
 #ifdef GTA_PS2
 #include "eetypes.h"
@@ -1248,7 +1245,7 @@ void CPad::AddToCheatString(char c)
 }
 #endif
 
-int Cheat_strncmp(char* sourceStr, char* origCheatStr)
+int Cheat_strncmp(const char* sourceStr, const char* origCheatStr)
 {
 #define ccmp(n) if((uint8)sourceStr[i] != (uint8)origCheatStr[i] - n) return 1;
 	int i = 0;
@@ -3577,16 +3574,12 @@ int32 *CPad::EditCodesForControls(int32 *pRsKeys, int32 nSize)
 	*pRsKeys = rsNULL;
 
 	for ( int32 i = 0; i < 255; i++ )
-	{
-		if ( GetPad(0)->GetCharJustDown(i) )
+		if (GetPad(0)->GetCharJustDown(i))
 			*pRsKeys = i;
-	}
 
 	for ( int32 i = 0; i < 12; i++ )
-	{
-		if ( GetPad(0)->GetFJustDown(i) )
+		if (GetPad(0)->GetFJustDown(i))
 			*pRsKeys = i + rsF1;
-	}
 
 	if ( GetPad(0)->GetEscapeJustDown() )
 		*pRsKeys = rsESC;
@@ -3702,22 +3695,22 @@ int32 *CPad::EditCodesForControls(int32 *pRsKeys, int32 nSize)
 	if ( GetPad(0)->GetLeftCtrlJustDown() )
 		*pRsKeys = rsLCTRL;
 
-	if ( GetPad(0)->GetRightCtrlJustDown() )
+	if (GetPad(0)->GetRightCtrlJustDown())
 		*pRsKeys = rsRCTRL;
 
-	if ( GetPad(0)->GetLeftAltJustDown() )
+	if (GetPad(0)->GetLeftAltJustDown())
 		*pRsKeys = rsLALT;
 
-	if ( GetPad(0)->GetRightAltJustDown() )
+	if (GetPad(0)->GetRightAltJustDown())
 		*pRsKeys = rsRALT;
 
-	if ( GetPad(0)->GetLeftWinJustDown() )
+	if (GetPad(0)->GetLeftWinJustDown())
 		*pRsKeys = rsLWIN;
 
-	if ( GetPad(0)->GetRightWinJustDown() )
+	if (GetPad(0)->GetRightWinJustDown())
 		*pRsKeys = rsRWIN;
 
-	if ( GetPad(0)->GetAppsJustDown() )
+	if (GetPad(0)->GetAppsJustDown())
 		*pRsKeys = rsAPPS;
 
 	return pRsKeys;
@@ -3726,7 +3719,7 @@ int32 *CPad::EditCodesForControls(int32 *pRsKeys, int32 nSize)
 void CPad::FixPadsAfterSave(void)
 {
 	UpdatePads();
-	if ( bObsoleteControllerMessage )
+	if (bObsoleteControllerMessage)
 	{
 		bObsoleteControllerMessage = false;
 		GetPad(0)->Phase = 0;

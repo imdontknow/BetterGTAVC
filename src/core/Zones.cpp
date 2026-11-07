@@ -5,10 +5,10 @@
 #include "Zones.h"
 
 #include "Clock.h"
-#include "Text.h"
+#include "text/Text.h"
 #include "World.h"
 #include "Timer.h"
-#include "SaveBuf.h"
+#include "save/SaveBuf.h"
 
 eLevelName CTheZones::m_CurrLevel;
 int16 CTheZones::FindIndex;

@@ -1,9 +1,9 @@
 #ifdef _WIN32
 #define WITHWINDOWS
-#include "common.h"
+#include "core/common.h"
 
 #include "CdStream.h"
-#include "MemoryMgr.h"
+#include "rw/MemoryMgr.h"
 
 struct CdReadInfo
 {

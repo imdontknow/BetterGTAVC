@@ -1,8 +1,8 @@
 #ifndef __GTA_DARKEL_H__
 #define __GTA_DARKEL_H__
 
-#include "ModelIndices.h"
-#include "WeaponType.h"
+#include "modelinfo/ModelIndices.h"
+#include "weapons/WeaponType.h"
 
 class CVehicle;
 class CPed;
@@ -54,5 +54,4 @@ public:
 	static void DealWithWeaponChangeAtEndOfFrenzy();
 
 };
-
 #endif // __GTA_DARKEL_H__

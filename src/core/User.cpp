@@ -1,12 +1,12 @@
 #include "common.h"
 
-#include "GameLogic.h"
-#include "Hud.h"
-#include "PlayerPed.h"
-#include "Replay.h"
-#include "Text.h"
+#include "control/GameLogic.h"
+#include "renderer/Hud.h"
+#include "peds/PlayerPed.h"
+#include "control/Replay.h"
+#include "text/Text.h"
 #include "User.h"
-#include "Vehicle.h"
+#include "vehicles/Vehicle.h"
 #include "World.h"
 #include "Zones.h"
 

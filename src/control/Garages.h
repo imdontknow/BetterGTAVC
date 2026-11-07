@@ -1,9 +1,9 @@
 #ifndef __GTA_GARAGES_H__
 #define __GTA_GARAGES_H__
-#include "audio_enums.h"
-#include "Camera.h"
-#include "config.h"
-#include "Lists.h"
+#include "audio/audio_enums.h"
+#include "core/Camera.h"
+#include "core/config.h"
+#include "core/Lists.h"
 
 class CVehicle;
 
@@ -302,5 +302,4 @@ public:
 	static bool IsThisGarageTypeSafehouse(uint8 type) { return FindSafeHouseIndexForGarageType(type) >= 0; }
 
 };
-
 #endif // __GTA_GARAGES_H__

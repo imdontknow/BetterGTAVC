@@ -1,7 +1,7 @@
 #ifndef __GTA_PLAYERINFO_H__
 #define __GTA_PLAYERINFO_H__
 
-#include "ColModel.h"
+#include "collision/ColModel.h"
 #include "Lists.h"
 
 enum eWastedBustedState

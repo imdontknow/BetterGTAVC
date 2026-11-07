@@ -3,7 +3,7 @@
 
 // Functions that's different on glfw/win etc. but have same signature (but if a function only used in win.cpp you can keep in win.h)
 
-#include "rwcore.h"
+#include "fakerw/rwcore.h"
 #include "skeleton.h"
 
 #ifdef    __cplusplus
@@ -56,6 +56,5 @@ extern RwChar** _psGetVideoModeList();
 extern RwInt32 _psGetNumVideModes();
 #ifdef    __cplusplus
 }
-#endif                          /* __cplusplus */
-
+#endif /* __cplusplus */
 #endif /* PLATFORM_H */

@@ -1,8 +1,8 @@
 #ifndef __GTA_ENTITY_H__
 #define __GTA_ENTITY_H__
 
-#include "ModelInfo.h"
-#include "Placeable.h"
+#include "modelinfo/ModelInfo.h"
+#include "core/Placeable.h"
 
 struct CReference;
 class CPtrList;

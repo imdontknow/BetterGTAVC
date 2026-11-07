@@ -1,17 +1,17 @@
 #ifndef __GTA_PED_H__
 #define __GTA_PED_H__
 
-#include "RwHelper.h"
-#include "AnimManager.h"
+#include "rw/RwHelper.h"
+#include "animation/AnimManager.h"
 #include "Crime.h"
 #include "EventList.h"
 #include "PedIK.h"
 #include "PedType.h"
-#include "Physical.h"
-#include "Weapon.h"
-#include "WeaponInfo.h"
-#include "PathFind.h"
-#include "Collision.h"
+#include "entities/Physical.h"
+#include "weapons/Weapon.h"
+#include "weapons/WeaponInfo.h"
+#include "control/PathFind.h"
+#include "collision/Collision.h"
 
 #define FEET_OFFSET	1.04f
 #define CHECK_NEARBY_THINGS_MAX_DIST	15.0f

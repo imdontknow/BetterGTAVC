@@ -3,38 +3,38 @@
 #define WITHDINPUT
 #include "common.h"
 #ifndef PS2_MENU
-#include "crossplatform.h"
-#include "platform.h"
+#include "skel/crossplatform.h"
+#include "skel/platform.h"
 #include "Frontend.h"
-#include "Font.h"
+#include "renderer/Font.h"
 #include "Pad.h"
-#include "Text.h"
+#include "text/Text.h"
 #include "main.h"
-#include "RwHelper.h"
+#include "rw/RwHelper.h"
 #include "Timer.h"
 #include "Game.h"
-#include "DMAudio.h"
+#include "audio/DMAudio.h"
 #include "FileMgr.h"
 #include "Streaming.h"
-#include "TxdStore.h"
+#include "rw/TxdStore.h"
 #include "General.h"
-#include "GenericGameStorage.h"
+#include "save/GenericGameStorage.h"
 #include "Script.h"
 #include "Camera.h"
 #include "ControllerConfig.h"
-#include "Vehicle.h"
-#include "MBlur.h"
-#include "PlayerSkin.h"
+#include "vehicles/Vehicle.h"
+#include "renderer/MBlur.h"
+#include "renderer/PlayerSkin.h"
 #include "PlayerInfo.h"
 #include "World.h"
-#include "Renderer.h"
+#include "renderer/Renderer.h"
 #include "CdStream.h"
 #include "Radar.h"
 #include "Stats.h"
-#include "Messages.h"
+#include "text/Messages.h"
 #include "FileLoader.h"
 #include "User.h"
-#include "sampman.h"
+#include "audio/sampman.h"
 
 // Similar story to Hud.cpp:
 // Game has colors inlined in code.
@@ -777,7 +777,7 @@ CMenuManager::CheckSliderMovement(int value)
 }
 
 void
-CMenuManager::DisplayHelperText(char *text)
+CMenuManager::DisplayHelperText(const char *text)
 {
 	if (m_nMenuFadeAlpha != 255)
 		return;
@@ -4936,7 +4936,7 @@ CMenuManager::ProcessUserInput(uint8 goDown, uint8 goUp, uint8 optionSelected, u
 					ControlsManager.MakeControllerActionsBlank();
 					ControlsManager.InitDefaultControlConfiguration();
 					ControlsManager.InitDefaultControlConfigMouse(MousePointerStateHelper.GetMouseSetUp());
-#if !defined RW_GL3
+/*#if !defined RW_GL3
 					if (AllValidWinJoys.m_aJoys[JOYSTICK1].m_bInitialised) {
 						DIDEVCAPS devCaps;
 						devCaps.dwSize = sizeof(DIDEVCAPS);
@@ -4950,13 +4950,13 @@ CMenuManager::ProcessUserInput(uint8 goDown, uint8 goUp, uint8 optionSelected, u
                         SDL_JoystickClose(joy1);
                         ControlsManager.InitDefaultControlConfigJoyPad(count);
                     }*/
-#else
+/*#else
 					if (PSGLOBAL(joy1id) != -1 && glfwJoystickPresent(PSGLOBAL(joy1id))) {
 						int count;
 						glfwGetJoystickButtons(PSGLOBAL(joy1id), &count);
 						ControlsManager.InitDefaultControlConfigJoyPad(count);
 					}
-#endif
+#endif*/
 					MousePointerStateHelper.bInvertVertically = true;
 					TheCamera.m_bHeadBob = false;
 #ifdef FIX_BUGS
@@ -6742,6 +6742,5 @@ CMenuManager::LoadController(int8 type)
 	}
 }
 #endif // GAMEPAD_MENU
-
 #undef GetBackJustUp
 #undef GetBackJustDown

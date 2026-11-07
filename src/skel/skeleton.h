@@ -1,7 +1,7 @@
 #ifndef SKELETON_H
 #define SKELETON_H
 
-#include "rwcore.h"
+#include "fakerw/rwcore.h"
 
 /* Default arena size depending on platform. */
 #define rsRESOURCESDEFAULTARENASIZE (1 << 20)

@@ -1,8 +1,8 @@
 #include "common.h"
 
 #include "World.h"
-#include "Vehicle.h"
-#include "PlayerPed.h"
+#include "vehicles/Vehicle.h"
+#include "peds/PlayerPed.h"
 #include "Pools.h"
 #include "References.h"
 

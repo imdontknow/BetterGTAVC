@@ -38,7 +38,7 @@ char *_strdate(char *buf);
 	#endif
 #endif
 #if defined RW_D3D9 || defined RWLIBS
-#include "win.h"
+#include "skel/win/win.h"
 #endif
 extern DWORD _dwOperatingSystemVersion;
 #define fcaseopen fopen

@@ -66,7 +66,7 @@ public:
 	static void ShutDownForRestart(void);
 	static void InitialiseWhenRestarting(void);
 	static void Process(void);
-
+	static void InitScr(void);
 	static void InitAfterFocusLoss(void);
 
 	static bool IsInInterior(void) { return currArea != AREA_MAIN_MAP; }

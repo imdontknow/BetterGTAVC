@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core/common.h"
 
 #if defined _WIN32 && !defined __MINGW32__
 #if defined __MWERKS__
@@ -10,10 +10,10 @@
 #include <cwctype>
 #endif
 
-#include "General.h"
-#include "RwHelper.h"
-#include "ModelIndices.h"
-#include "ModelInfo.h"
+#include "core/General.h"
+#include "rw/RwHelper.h"
+#include "modelinfo/ModelIndices.h"
+#include "modelinfo/ModelInfo.h"
 #include "AnimManager.h"
 #include "RpAnimBlend.h"
 #include "AnimBlendAssociation.h"

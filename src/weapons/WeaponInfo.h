@@ -1,8 +1,8 @@
 #ifndef __GTA_WEAPONINFO_H__
 #define __GTA_WEAPONINFO_H__
 
-#include "AnimManager.h"
-#include "AnimationId.h"
+#include "animation/AnimManager.h"
+#include "animation/AnimationId.h"
 #include "WeaponType.h"
 
 enum

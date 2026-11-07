@@ -2,8 +2,8 @@
 #define __GTA_BIKE_H__
 
 #include "Vehicle.h"
-#include "Skidmarks.h"
-#include "AnimManager.h"
+#include "renderer/Skidmarks.h"
+#include "animation/AnimManager.h"
 
 enum eBikeNodes {
 	BIKE_NODE_NONE,

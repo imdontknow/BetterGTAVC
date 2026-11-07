@@ -2,8 +2,8 @@
 
 #include "main.h"
 #include "FileMgr.h"
-#include "Weather.h"
-#include "Collision.h"
+#include "renderer/Weather.h"
+#include "collision/Collision.h"
 #include "SurfaceTable.h"
 
 float CSurfaceTable::ms_aAdhesiveLimitTable[NUMADHESIVEGROUPS][NUMADHESIVEGROUPS];

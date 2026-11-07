@@ -2,10 +2,10 @@
 
 #include "IniFile.h"
 
-#include "CarCtrl.h"
+#include "control/CarCtrl.h"
 #include "FileMgr.h"
 #include "main.h"
-#include "Population.h"
+#include "peds/Population.h"
 
 float CIniFile::PedNumberMultiplier = 0.6f;
 float CIniFile::CarNumberMultiplier = 0.6f;

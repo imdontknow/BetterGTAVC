@@ -4,7 +4,7 @@
 #include "Frontend_PS2.h"
 #else
 
-#include "Sprite2d.h"
+#include "renderer/Sprite2d.h"
 #include "Timer.h"
 
 #define MENUHEADER_POS_X 10.0f
@@ -415,7 +415,7 @@ struct CMenuScreen
 };
 extern CMenuScreen aScreens[MENUPAGES];
 #else
-#include "frontendoption.h"
+#include "extras/frontendoption.h"
 struct CCustomScreenLayout {
 	int startX; // not used at all if first entry has X and Y values
 	int startY; // not used at all if first entry has X and Y values
@@ -808,7 +808,7 @@ public:
 	void CheckCodesForControls(int);
 	bool CheckHover(int x1, int x2, int y1, int y2);
 	void CheckSliderMovement(int);
-	void DisplayHelperText(char*);
+	void DisplayHelperText(const char*);
 	int DisplaySlider(float, float, float, float, float, float, float);
 	void DoSettingsBeforeStartingAGame();
 	void DrawStandardMenus(bool);
@@ -874,5 +874,4 @@ VALIDATE_SIZE(CMenuManager, 0x688);
 extern CMenuManager FrontEndMenuManager;
 
 #endif
-
 #endif // __GTA_FRONTEND_H__

@@ -1,7 +1,7 @@
 #ifndef __GTA_DUMMYOBJECT_H__
 #define __GTA_DUMMYOBJECT_H__
 
-#include "Dummy.h"
+#include "entities/Dummy.h"
 
 class CObject;
 

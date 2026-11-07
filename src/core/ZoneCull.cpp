@@ -1,8 +1,8 @@
 #include "common.h"
 
-#include "Building.h"
-#include "Treadable.h"
-#include "Train.h"
+#include "buildings/Building.h"
+#include "buildings/Treadable.h"
+#include "vehicles/Train.h"
 #include "Pools.h"
 #include "Timer.h"
 #include "Camera.h"

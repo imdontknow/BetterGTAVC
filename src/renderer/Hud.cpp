@@ -1780,7 +1780,7 @@ void CHud::Initialise()
 	m_LastWeapon = 0;
 
 #ifndef MASTER
-	VarConsole.Add("Draw HUD", &m_Wants_To_Draw_Hud, false);
+	VarConsole.BAdd("Draw HUD", &m_Wants_To_Draw_Hud, false);
 #endif
 	CTxdStore::PopCurrentTxd();
 }

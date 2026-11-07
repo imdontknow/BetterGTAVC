@@ -1,14 +1,14 @@
 #include "common.h"
 
 #include "Stats.h"
-#include "Text.h"
+#include "text/Text.h"
 #include "World.h"
 #include "Pad.h"
-#include "DMAudio.h"
+#include "audio/DMAudio.h"
 #include "main.h"
-#include "Font.h"
+#include "renderer/Font.h"
 #include "Frontend.h"
-#include "audio_enums.h"
+#include "audio/audio_enums.h"
 
 #include <climits>
 

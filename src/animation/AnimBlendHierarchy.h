@@ -1,7 +1,7 @@
 #ifndef __GTA_ANIMBLENDHIERARCHY_H__
 #define __GTA_ANIMBLENDHIERARCHY_H__
 
-#include "templates.h"
+#include "core/templates.h"
 
 #ifdef MoveMemory
 #undef MoveMemory	// windows shit

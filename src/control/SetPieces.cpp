@@ -24,7 +24,7 @@ void CSetPieces::Init(void)
 	bDebug = false;
 	NumSetPieces = 0;
 #ifndef MASTER
-	VarConsole.Add("Show set pieces", &bDebug, true);
+	VarConsole.BAdd("Show set pieces", &bDebug, true);
 #endif
 }
 

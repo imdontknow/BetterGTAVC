@@ -1,7 +1,7 @@
 #ifndef __GTA_PEDIK_H__
 #define __GTA_PEDIK_H__
-#include "common.h"
-#include "AnimBlendClumpData.h"
+#include "core/common.h"
+#include "animation/AnimBlendClumpData.h"
 
 struct LimbOrientation
 {

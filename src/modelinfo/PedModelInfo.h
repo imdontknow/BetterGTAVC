@@ -2,8 +2,8 @@
 #define __GTA_PEDMODELINFO_H__
 
 #include "ClumpModelInfo.h"
-#include "ColModel.h"
-#include "PedType.h"
+#include "collision/ColModel.h"
+#include "peds/PedType.h"
 
 enum PedNode {
 	PED_TORSO = 0,	// has no bone!

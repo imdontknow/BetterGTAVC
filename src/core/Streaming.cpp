@@ -2,41 +2,41 @@
 
 #include "General.h"
 #include "Pad.h"
-#include "Hud.h"
-#include "Text.h"
+#include "renderer/Hud.h"
+#include "text/Text.h"
 #include "Clock.h"
-#include "Renderer.h"
-#include "ModelInfo.h"
-#include "TxdStore.h"
-#include "ModelIndices.h"
+#include "renderer/Renderer.h"
+#include "modelinfo/ModelInfo.h"
+#include "rw/TxdStore.h"
+#include "modelinfo/ModelIndices.h"
 #include "Pools.h"
 #include "Wanted.h"
 #include "Directory.h"
-#include "RwHelper.h"
+#include "rw/RwHelper.h"
 #include "World.h"
-#include "Entity.h"
+#include "entities/Entity.h"
 #include "FileMgr.h"
 #include "FileLoader.h"
 #include "Zones.h"
 #include "Radar.h"
 #include "Camera.h"
-#include "Record.h"
-#include "CarCtrl.h"
-#include "Population.h"
-#include "Gangs.h"
-#include "CutsceneMgr.h"
+#include "control/Record.h"
+#include "control/CarCtrl.h"
+#include "peds/Population.h"
+#include "peds/Gangs.h"
+#include "animation/CutsceneMgr.h"
 #include "CdStream.h"
 #include "Streaming.h"
-#include "Replay.h"
+#include "control/Replay.h"
 #include "main.h"
-#include "ColStore.h"
-#include "DMAudio.h"
+#include "collision/ColStore.h"
+#include "audio/DMAudio.h"
 #include "Script.h"
-#include "MemoryMgr.h"
-#include "MemoryHeap.h"
-#include "Font.h"
+#include "rw/MemoryMgr.h"
+#include "rw/MemoryHeap.h"
+#include "renderer/Font.h"
 #include "Frontend.h"
-#include "VarConsole.h"
+#include "renderer/VarConsole.h"
 
 bool CStreaming::ms_disableStreaming;
 bool CStreaming::ms_bLoadingBigModel;
@@ -250,9 +250,9 @@ CStreaming::Init2(void)
 	CModelInfo::GetModelInfo("IslandLODbeach", &islandLODbeach);
 
 #ifndef MASTER
-	VarConsole.Add("Streaming Debug", &gbPrintStats, true);
-	VarConsole.Add("Streaming Vehicle Debug", &gbPrintVehiclesInMemory, true);
-	VarConsole.Add("Printf Streaming Buffer contents", &gbPrintStreamingBuffer, true);
+	VarConsole.BAdd("Streaming Debug", &gbPrintStats, true);
+	VarConsole.BAdd("Streaming Vehicle Debug", &gbPrintVehiclesInMemory, true);
+	VarConsole.BAdd("Printf Streaming Buffer contents", &gbPrintStreamingBuffer, true);
 #endif
 }
 
@@ -931,7 +931,7 @@ CStreaming::RequestIslands(eLevelName level)
 	}
 }
 
-static char *IGnames[] = {
+static const char *IGnames[] = {
 	"player",
 	"player2",
 	"player3",
@@ -956,7 +956,7 @@ static char *IGnames[] = {
 	""
 };
 
-static char *CSnames[] = {
+static const char *CSnames[] = {
 	"csplay",
 	"csplay2",
 	"csplay3",

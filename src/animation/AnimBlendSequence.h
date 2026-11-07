@@ -1,7 +1,7 @@
 #ifndef __GTA_ANIMBLENDSEQUENCE_H__
 #define __GTA_ANIMBLENDSEQUENCE_H__
 
-#include "Quaternion.h"
+#include "math/Quaternion.h"
 
 #ifdef MoveMemory
 #undef MoveMemory	// windows shit

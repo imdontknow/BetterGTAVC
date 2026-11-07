@@ -8,28 +8,28 @@
 #pragma comment( lib, "Xinput.lib" )
 #endif
 #endif
-#include "platform.h"
-#include "crossplatform.h"
-#include "Renderer.h"
+#include "skel/platform.h"
+#include "skel/crossplatform.h"
+#include "renderer/Renderer.h"
 #include "Frontend.h"
-#include "Font.h"
+#include "renderer/Font.h"
 #include "Camera.h"
 #include "main.h"
-#include "MBlur.h"
-#include "postfx.h"
-#include "custompipes.h"
-#include "RwHelper.h"
-#include "Text.h"
+#include "renderer/MBlur.h"
+#include "extras/postfx.h"
+#include "extras/custompipes.h"
+#include "rw/RwHelper.h"
+#include "text/Text.h"
 #include "Streaming.h"
 #include "FileLoader.h"
-#include "Collision.h"
-#include "ModelInfo.h"
+#include "collision/Collision.h"
+#include "modelinfo/ModelInfo.h"
 #include "Pad.h"
 #include "ControllerConfig.h"
-#include "DMAudio.h"
+#include "audio/DMAudio.h"
 #include "IniFile.h"
-#include "CarCtrl.h"
-#include "Population.h"
+#include "control/CarCtrl.h"
+#include "peds/Population.h"
 
 // Menu screens array is at the bottom of the file.
 
@@ -814,6 +814,5 @@ CMenuScreenCustom aScreens[] = {
 	// MENUPAGE_OUTRO = 34
 	{ "", 0, nil, nil, },
 };
-
 #endif
 #endif

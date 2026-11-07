@@ -1,7 +1,7 @@
 #ifndef __GTA_RPSKIN_H__
 #define __GTA_RPSKIN_H__
 
-#include <rphanim.h>
+#include <fakerw/rphanim.h>
 
 //struct RpSkin;
 typedef rw::Skin RpSkin;

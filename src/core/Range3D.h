@@ -3,7 +3,7 @@
 
 class CRange3D
 {
-	CVector min, max;
+	CVector range3dmin, range3dmax;
 public:
 	CRange3D(CVector _min, CVector _max);
 	bool IsInRange(CVector vec);

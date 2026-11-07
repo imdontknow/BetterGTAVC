@@ -1,6 +1,6 @@
 #ifndef __GTA_CUTSCENEMGR_H__
 #define __GTA_CUTSCENEMGR_H__
-#include "CutsceneObject.h"
+#include "objects/CutsceneObject.h"
 
 #define CUTSCENENAMESIZE 8
 

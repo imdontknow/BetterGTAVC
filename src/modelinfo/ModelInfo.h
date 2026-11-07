@@ -1,7 +1,7 @@
 #ifndef __GTA_MODELINFO_H__
 #define __GTA_MODELINFO_H__
 
-#include "2dEffect.h"
+#include "renderer/2dEffect.h"
 #include "SimpleModelInfo.h"
 #include "MloModelInfo.h"
 #include "TimeModelInfo.h"
@@ -9,7 +9,7 @@
 #include "ClumpModelInfo.h"
 #include "PedModelInfo.h"
 #include "VehicleModelInfo.h"
-#include "templates.h"
+#include "core/templates.h"
 
 class CModelInfo
 {
@@ -51,5 +51,4 @@ public:
 	static bool IsPlaneModel(int32 id);
 	static void ReInit2dEffects();
 };
-
 #endif // __GTA_MODELINFO_H__

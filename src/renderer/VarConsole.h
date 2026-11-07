@@ -21,7 +21,7 @@ enum eVarConsoleEntryType
 
 struct CVarConsoleEntry
 {
-	char *text;
+	const char *text;
 	int8 *pInt8Value;
 	int16 *pInt16Value;
 	int32 *pInt32Value;
@@ -57,20 +57,20 @@ public:
 	CVarConsole() { Initialise(); }
 #endif
 	void Initialise();
-	void Add(char *text, int8 *pVal, uint8 step, int8 min, int8 max, bool8 isVar);
-	void Add(char *text, int16 *pVal, uint16 step, int16 min, int16 max, bool8 isVar);
-	void Add(char *text, int32 *pVal, uint32 step, int32 min, int32 max, bool8 isVar);
-	void Add(char *text, int64 *pVal, uint64 step, int64 min, int64 max, bool8 isVar);
-	void Add(char *text, uint8 *pVal, uint8 step, int8 min, int8 max, bool8 isVar);
-	void Add(char *text, uint16 *pVal, uint16 step, int16 min, int16 max, bool8 isVar);
-	void Add(char *text, uint32 *pVal, uint32 step, int32 min, int32 max, bool8 isVar);
-	void Add(char *text, uint64 *pVal, uint64 step, int64 min, int64 max, bool8 isVar);
-	void Add(char *text, float *pVal, float step, float min, float max, bool8 isVar);
-	void Add(char *text, bool *pVal, bool8 isVar);
-	void Add(char *text, bool8 *pVal, bool8 isVar);
-	void Add(char *text, bool16 *pVal, bool8 isVar);
-	void Add(char *text, bool32 *pVal, bool8 isVar);
-	void Add(char *text, void (*pVar)(void));
+	void Add8(const char *text, int8 *pVal, uint8 step, int8 min, int8 max, bool8 isVar);
+	void Add16(const char *text, int16 *pVal, uint16 step, int16 min, int16 max, bool8 isVar);
+	void Add32(const char *text, int32 *pVal, uint32 step, int32 min, int32 max, bool8 isVar);
+	void Add64(const char *text, int64 *pVal, uint64 step, int64 min, int64 max, bool8 isVar);
+	void UAdd8(const char *text, uint8 *pVal, uint8 step, int8 min, int8 max, bool8 isVar);
+	void UAdd16(const char *text, uint16 *pVal, uint16 step, int16 min, int16 max, bool8 isVar);
+	void UAdd32(const char *text, uint32 *pVal, uint32 step, int32 min, int32 max, bool8 isVar);
+	void UAdd64(const char *text, uint64 *pVal, uint64 step, int64 min, int64 max, bool8 isVar);
+	void Add(const char *text, float *pVal, float step, float min, float max, bool8 isVar);
+	void BAdd(const char *text, bool *pVal, bool8 isVar);
+	void BAdd8(const char *text, bool8 *pVal, bool8 isVar);
+	void BAdd16(const char *text, bool16 *pVal, bool8 isVar);
+	void BAdd32(const char *text, bool32 *pVal, bool8 isVar);
+	void Add(const char *text, void (*pVar)(void));
 
 	void Remove(char *text);
 

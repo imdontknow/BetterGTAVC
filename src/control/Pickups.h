@@ -1,6 +1,6 @@
 #ifndef __GTA_PICKUPS_H__
 #define __GTA_PICKUPS_H__
-#include "Weapon.h"
+#include "weapons/Weapon.h"
 
 enum ePickupType
 {

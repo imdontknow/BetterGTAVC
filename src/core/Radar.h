@@ -1,7 +1,7 @@
 #ifndef __GTA_RADAR_H__
 #define __GTA_RADAR_H__
-#include "Sprite2d.h"
-#include "Draw.h"
+#include "renderer/Sprite2d.h"
+#include "renderer/Draw.h"
 
 #define CARBLIP_MARKER_COLOR_R 252
 #define CARBLIP_MARKER_COLOR_G 138
@@ -293,5 +293,4 @@ public:
 	static void DrawCoordBlip(int32 blipId);
 	static void DrawLegend(int32, int32, int32);
 };
-
 #endif // __GTA_RADAR_H__

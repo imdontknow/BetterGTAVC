@@ -1,9 +1,9 @@
 #include "common.h"
 #ifndef MASTER
-#include "Font.h"
+#include "renderer/Font.h"
 #include "Frontend.h"
 #include "Timer.h"
-#include "Text.h"
+#include "text/Text.h"
 
 #define MAX_TIMERS (50)
 #define MAX_MS_COLLECTED (40)

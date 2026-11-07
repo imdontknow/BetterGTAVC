@@ -4,7 +4,7 @@
 #include "Game.h"
 #include "Lists.h"
 #include "PlayerInfo.h"
-#include "Collision.h"
+#include "collision/Collision.h"
 
 /* Sectors span from -2400 to 1600 in x and -2000 to 2000 y.
  * With 80x80 sectors, each is 50x50 units. */

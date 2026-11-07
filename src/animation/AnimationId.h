@@ -286,5 +286,4 @@ enum AnimationId
 	ANIM_STRIP_F,
 	ANIM_STRIP_G,
 };
-
 #endif // __GTA_ANIMATIONID_H__

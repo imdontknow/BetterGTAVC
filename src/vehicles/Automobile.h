@@ -4,7 +4,7 @@
 #include "Vehicle.h"
 #include "DamageManager.h"
 #include "Door.h"
-#include "Skidmarks.h"
+#include "renderer/Skidmarks.h"
 
 class CObject;
 

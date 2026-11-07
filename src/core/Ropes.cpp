@@ -2,11 +2,11 @@
 
 #include "main.h"
 #include "Timer.h"
-#include "ModelIndices.h"
+#include "modelinfo/ModelIndices.h"
 #include "Streaming.h"
-#include "CopPed.h"
-#include "Population.h"
-#include "RenderBuffer.h"
+#include "peds/CopPed.h"
+#include "peds/Population.h"
+#include "renderer/RenderBuffer.h"
 #include "Camera.h"
 #include "Ropes.h"
 

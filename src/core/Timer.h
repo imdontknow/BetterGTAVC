@@ -70,5 +70,4 @@ public:
 	static uint32 GetLogicalFramesPassed(void) { return m_LogicalFramesPassed; }
 #endif
 };
-
 #endif // __GTA_TIMER_H__

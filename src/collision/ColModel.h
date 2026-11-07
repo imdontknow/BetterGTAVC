@@ -1,12 +1,12 @@
 #ifndef __GTA_COLMODEL_H__
 #define __GTA_COLMODEL_H__
 
-#include "templates.h"
-#include "ColBox.h"
-#include "ColSphere.h"
-#include "ColLine.h"
-#include "ColPoint.h"
-#include "ColTriangle.h"
+#include "core/templates.h"
+#include "collision/ColBox.h"
+#include "collision/ColSphere.h"
+#include "collision/ColLine.h"
+#include "collision/ColPoint.h"
+#include "collision/ColTriangle.h"
 
 struct CColModel
 {

@@ -4,8 +4,8 @@
 #include "audio_enums.h"
 #include "AudioCollision.h"
 #include "PolRadio.h"
-#include "VehicleModelInfo.h"
-#include "Vehicle.h"
+#include "modelinfo/VehicleModelInfo.h"
+#include "vehicles/Vehicle.h"
 
 class tSound
 {
@@ -648,5 +648,4 @@ enum
 	PED_COMMENT_VOLUME_BEHIND_WALL = 31,
 	COLLISION_MAX_DIST = 60,
 };
-
 #endif // __GTA_AUDIOMANAGER_H__

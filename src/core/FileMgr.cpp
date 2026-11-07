@@ -8,7 +8,7 @@
 #include <sys/stat.h>
 #endif
 #include "common.h"
-#include "crossplatform.h"
+#include "skel/crossplatform.h"
 
 #include "FileMgr.h"
 

@@ -40,7 +40,7 @@ COcclusion::Init(void)
 {
 	NumOccludersOnMap = 0;
 #ifndef MASTER
-	VarConsole.Add("Occlusion debug", &bDispayOccDebugStuff, true);
+	VarConsole.BAdd("Occlusion debug", &bDispayOccDebugStuff, true);
 #endif
 	FarAwayList = -1;
 	NearbyList = -1;

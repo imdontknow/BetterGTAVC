@@ -1,10 +1,10 @@
-#include "common.h"
-#include "RwHelper.h"
+#include "core/common.h"
+#include "rw/RwHelper.h"
 #include "Debug.h"
-#include "Lines.h"
-#include "Font.h"
+#include "renderer/Lines.h"
+#include "renderer/Font.h"
 #include "main.h"
-#include "Text.h"
+#include "text/Text.h"
 
 bool gbDebugStuffInRelease = false;
 

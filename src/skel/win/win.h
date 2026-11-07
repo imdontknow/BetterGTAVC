@@ -8,8 +8,10 @@
 #define RSREGSETBREAKALLOC(_name) /* No op */
 #endif /* (!defined(RSREGSETBREAKALLOC)) */
 
-#ifdef __DINPUT_INCLUDED__
+//#ifdef __DINPUT_INCLUDED__ // I Think, Nobody Uses that anymore
+/**** Compatibility ****/
 /* platform specfic global data */
+#include <dinput.h>
 typedef struct
 {
 	HWND		window;
@@ -23,8 +25,7 @@ typedef struct
 	LPDIRECTINPUTDEVICE8 mouse;
 	LPDIRECTINPUTDEVICE8 joy1;
 	LPDIRECTINPUTDEVICE8 joy2;
-}
-psGlobalType;
+}psGlobalType;
 
 #define PSGLOBAL(var) (((psGlobalType *)(RsGlobal.ps))->var)
 
@@ -61,7 +62,7 @@ public:
 };
 
 extern CJoySticks AllValidWinJoys;
-#endif
+//#endif
 
 #ifdef    __cplusplus
 extern "C"
@@ -86,6 +87,5 @@ void CloseClip(void);
 
 #ifdef    __cplusplus
 }
-#endif                          /* __cplusplus */
-
+#endif /* __cplusplus */
 #endif /* (!defined(_PLATFORM_WIN_H)) */

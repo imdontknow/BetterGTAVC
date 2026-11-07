@@ -1,8 +1,8 @@
 #ifndef __GTA_STATS_H__
 #define __GTA_STATS_H__
 
-#include "PedType.h"
-#include "audio_enums.h"
+#include "peds/PedType.h"
+#include "audio/audio_enums.h"
 
 class CStats
 {

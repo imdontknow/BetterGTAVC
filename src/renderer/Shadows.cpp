@@ -160,7 +160,7 @@ CShadows::Init(void)
 	}
 
 #ifndef MASTER
-	VarConsole.Add("Count polys in shadow", &gbCountPolysInShadow, true);
+	VarConsole.BAdd("Count polys in shadow", &gbCountPolysInShadow, true);
 #endif
 }
 

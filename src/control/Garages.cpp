@@ -129,7 +129,7 @@ bool bPrintNearestObject;
 void CGarages::Init(void)
 {
 #ifndef MASTER
-	VarConsole.Add("Print nearest object", &bPrintNearestObject, true);
+	VarConsole.BAdd("Print nearest object", &bPrintNearestObject, true);
 #endif
 	CrushedCarId = -1;
 	NumGarages = 0;

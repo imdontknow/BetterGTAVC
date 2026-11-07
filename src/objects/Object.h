@@ -1,7 +1,7 @@
 #ifndef __GTA_OBJECT_H__
 #define __GTA_OBJECT_H__
 
-#include "Physical.h"
+#include "entities/Physical.h"
 
 enum {
 	UNKNOWN_OBJECT = 0,

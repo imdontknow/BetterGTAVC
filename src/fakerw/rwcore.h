@@ -5,7 +5,7 @@
 
 #include <rw.h>
 
-#include <rwplcore.h>
+#include <fakerw/rwplcore.h>
 
 /*
  ***********************************************

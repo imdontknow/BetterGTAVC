@@ -1,10 +1,10 @@
-#include "common.h"
+#include "core/common.h"
 
 #include "Timer.h"
 #include "Pad.h"
 #include "Clock.h"
 #include "Stats.h"
-#include "VarConsole.h"
+#include "renderer/VarConsole.h"
 
 _TODO("gbFastTime");
 bool gbFastTime;
@@ -35,8 +35,8 @@ CClock::Initialise(uint32 scale)
 	ms_bClockHasBeenStored = false;
 	debug("CClock ready\n");
 #ifndef MASTER
-	VarConsole.Add("Time (hour of day)", &ms_nGameClockHours, 1, 0, 23, true);
-	VarConsole.Add("Freeze time", &gbFreezeTime, true);
+	VarConsole.UAdd8("Time (hour of day)", &ms_nGameClockHours, 1, 0, 23, true);
+	VarConsole.BAdd("Freeze time", &gbFreezeTime, true);
 #endif
 }
 

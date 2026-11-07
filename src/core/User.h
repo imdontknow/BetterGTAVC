@@ -1,8 +1,8 @@
 #ifndef __GTA_USER_H__
 #define __GTA_USER_H__
 
-#include "Pager.h"
-#include "OnscreenTimer.h"
+#include "text/Pager.h"
+#include "control/OnscreenTimer.h"
 
 class CZone;
 class CVehicle;
@@ -41,5 +41,4 @@ public:
 	static void Init();
 	static void Process();
 };
-
 #endif // __GTA_USER_H__

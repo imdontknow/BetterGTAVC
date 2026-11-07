@@ -2,20 +2,19 @@
 
 #include "Pools.h"
 
-#include "Bike.h"
-#include "Boat.h"
-#include "CarCtrl.h"
+#include "vehicles/Bike.h"
+#include "vehicles/Boat.h"
+#include "control/CarCtrl.h"
 #ifdef MISSION_REPLAY
-#include "GenericGameStorage.h"
+#include "save/GenericGameStorage.h"
 #endif
-#include "Population.h"
-#include "ProjectileInfo.h"
-#include "SaveBuf.h"
+#include "peds/Population.h"
+#include "weapons/ProjectileInfo.h"
+#include "save/SaveBuf.h"
 #include "Streaming.h"
 #include "Wanted.h"
 #include "World.h"
-#include "MemoryHeap.h"
-#include "SaveBuf.h"
+#include "rw/MemoryHeap.h"
 
 CCPtrNodePool *CPools::ms_pPtrNodePool;
 CEntryInfoNodePool *CPools::ms_pEntryInfoNodePool;

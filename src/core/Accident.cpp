@@ -2,7 +2,7 @@
 
 #include "Accident.h"
 
-#include "Ped.h"
+#include "peds/Ped.h"
 #include "Pools.h"
 #include "World.h"
 

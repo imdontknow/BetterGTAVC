@@ -1,13 +1,13 @@
-#include "common.h"
+#include "core/common.h"
 
-#include "FileMgr.h"
+#include "core/FileMgr.h"
 #ifdef MORE_LANGUAGES
-#include "Game.h"
+#include "core/Game.h"
 #endif
-#include "Frontend.h"
+#include "core/Frontend.h"
 #include "Messages.h"
 #include "Text.h"
-#include "Timer.h"
+#include "core/Timer.h"
 
 wchar WideErrorString[25];
 

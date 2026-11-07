@@ -183,8 +183,8 @@ CPlayerPed::SetupPlayerPed(int32 index)
 	player->m_wepAccuracy = 100;
 
 #ifndef MASTER
-	VarConsole.Add("Debug PlayerPed", &CPlayerPed::bDebugPlayerInfo, true);
-	VarConsole.Add("Tweak Vehicle Handling", &CVehicle::m_bDisplayHandlingInfo, true);
+	VarConsole.BAdd("Debug PlayerPed", &CPlayerPed::bDebugPlayerInfo, true);
+	VarConsole.BAdd("Tweak Vehicle Handling", &CVehicle::m_bDisplayHandlingInfo, true);
 #endif
 }
 

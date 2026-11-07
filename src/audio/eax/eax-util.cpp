@@ -11,7 +11,7 @@
 #include <math.h>
 
 // Function prototypes used by EAX3ListenerInterpolate
-void Clamp(EAXVECTOR *eaxVector);
+void eaxClamp(EAXVECTOR *eaxVector);
 bool CheckEAX3LP(LPEAXLISTENERPROPERTIES lpEAX3LP);
 
 
@@ -127,8 +127,8 @@ bool EAX3ListenerInterpolate(LPEAXLISTENERPROPERTIES lpStart, LPEAXLISTENERPROPE
 	StartVector = lpStart->vReflectionsPan;
 	FinalVector = lpFinish->vReflectionsPan;
 
-	Clamp(&StartVector);
-	Clamp(&FinalVector);
+	eaxClamp(&StartVector);
+	eaxClamp(&FinalVector);
 
 	if (lpStart->vReflectionsPan.x == lpFinish->vReflectionsPan.x)
 		lpResult->vReflectionsPan.x = lpStart->vReflectionsPan.x;
@@ -163,8 +163,8 @@ bool EAX3ListenerInterpolate(LPEAXLISTENERPROPERTIES lpStart, LPEAXLISTENERPROPE
 	StartVector = lpStart->vReverbPan;
 	FinalVector = lpFinish->vReverbPan;
 
-	Clamp(&StartVector);
-	Clamp(&FinalVector);
+	eaxClamp(&StartVector);
+	eaxClamp(&FinalVector);
 
 	if (lpStart->vReverbPan.x == lpFinish->vReverbPan.x)
 		lpResult->vReverbPan.x = lpStart->vReverbPan.x;
@@ -322,7 +322,7 @@ bool CheckEAX3LP(LPEAXLISTENERPROPERTIES lpEAX3LP)
 	Clamp
 	Clamps the length of the vector to 1.0f
 */
-void Clamp(EAXVECTOR *eaxVector)
+void eaxClamp(EAXVECTOR *eaxVector)
 {
 	float flMagnitude;
 	float flInvMagnitude;

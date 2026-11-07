@@ -1,12 +1,12 @@
 #include "common.h"
 
 #include "Pools.h"
-#include "ModelIndices.h"
+#include "modelinfo/ModelIndices.h"
 #include "World.h"
 #include "Wanted.h"
 #include "EventList.h"
-#include "Messages.h"
-#include "Text.h"
+#include "text/Messages.h"
+#include "text/Text.h"
 #include "main.h"
 #include "Accident.h"
 
@@ -247,5 +247,4 @@ CEventList::ReportCrimeForEvent(eEventType type, intptr crimeId, bool copsDontCa
 		FindPlayerPed()->SetWantedLevelNoDrop(1);
 	if(type == EVENT_SHOOT_COP || type == EVENT_ASSAULT_NASTYWEAPON_POLICE)
 		FindPlayerPed()->SetWantedLevelNoDrop(2);
-
 }

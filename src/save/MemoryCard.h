@@ -1,7 +1,7 @@
+#ifdef PS2_MENU
 #ifndef __GTA_MEMORYCARD_H__
 #define __GTA_MEMORYCARD_H__
 #include "common.h"
-#ifdef PS2_MENU
 #include "Date.h"
 
 #if defined(PS2)

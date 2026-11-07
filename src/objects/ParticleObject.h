@@ -1,9 +1,9 @@
 #ifndef __GTA_PARTICLEOBJECT_H__
 #define __GTA_PARTICLEOBJECT_H__
 
-#include "AudioManager.h"
-#include "ParticleType.h"
-#include "Placeable.h"
+#include "audio/AudioManager.h"
+#include "renderer/ParticleType.h"
+#include "core/Placeable.h"
 
 #define MAX_PARTICLEOBJECTS 70
 #define MAX_AUDIOHYDRANTS   8
@@ -111,5 +111,4 @@ public:
 
 	static CAudioHydrant *Get(int n);	// for neo screen droplets
 };
-
 #endif // __GTA_PARTICLEOBJECT_H__

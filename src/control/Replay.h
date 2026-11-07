@@ -1,10 +1,10 @@
 #ifndef __GTA_REPLAY_H__
 #define __GTA_REPLAY_H__
 
-#include "Pools.h"
-#include "World.h"
-#include "WeaponEffects.h"
-#include "ParticleType.h"
+#include "core/Pools.h"
+#include "core/World.h"
+#include "weapons/WeaponEffects.h"
+#include "renderer/ParticleType.h"
 
 #ifdef FIX_BUGS
 #ifndef DONT_FIX_REPLAY_BUGS
@@ -416,5 +416,4 @@ private:
 	static void GoToNextBlock(void);
 #endif
 };
-
 #endif // __GTA_REPLAY_H__

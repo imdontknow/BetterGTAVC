@@ -1,99 +1,101 @@
 #include "common.h"
-#include "platform.h"
+#include "skel/platform.h"
 
 #include "Game.h"
 #include "main.h"
-#include "RwHelper.h"
+#include "rw/RwHelper.h"
 #include "Accident.h"
-#include "Antennas.h"
-#include "Bridge.h"
-#include "CarCtrl.h"
-#include "CarGen.h"
+#include "renderer/Antennas.h"
+#include "control/Bridge.h"
+#include "control/CarCtrl.h"
+#include "vehicles/CarGen.h"
 #include "CdStream.h"
 #include "Clock.h"
-#include "Clouds.h"
-#include "Collision.h"
-#include "Console.h"
-#include "Coronas.h"
-#include "Cranes.h"
-#include "Credits.h"
-#include "CutsceneMgr.h"
-#include "DMAudio.h"
-#include "Darkel.h"
+#include "renderer/Clouds.h"
+#include "collision/Collision.h"
+#include "renderer/Console.h"
+#include "renderer/Coronas.h"
+#include "Vehicles/Cranes.h"
+#include "renderer/Credits.h"
+#include "animation/CutsceneMgr.h"
+#include "audio/DMAudio.h"
+#include "control/Darkel.h"
 #include "Debug.h"
 #include "EventList.h"
 #include "FileLoader.h"
 #include "FileMgr.h"
 #include "Fire.h"
-#include "Fluff.h"
-#include "Font.h"
+#include "renderer/Fluff.h"
+#include "renderer/Font.h"
 #include "Frontend.h"
-#include "frontendoption.h"
-#include "GameLogic.h"
-#include "Garages.h"
-#include "GenericGameStorage.h"
-#include "Glass.h"
-#include "HandlingMgr.h"
-#include "Heli.h"
-#include "Hud.h"
+#include "extras/frontendoption.h"
+#include "control/GameLogic.h"
+#include "control/Garages.h"
+#include "save/GenericGameStorage.h"
+#include "renderer/Glass.h"
+#include "vehicles/HandlingMgr.h"
+#include "vehicles/Heli.h"
+#include "renderer/Hud.h"
 #include "IniFile.h"
-#include "Lights.h"
-#include "MBlur.h"
-#include "Messages.h"
-#include "MemoryCard.h"
-#include "MemoryHeap.h"
+#include "rw/Lights.h"
+#include "renderer/MBlur.h"
+#include "text/Messages.h"
+#include "text/Text.h"
+#include "save/MemoryCard.h"
+#include "rw/MemoryHeap.h"
 #include "Pad.h"
-#include "Particle.h"
-#include "ParticleObject.h"
-#include "PedRoutes.h"
-#include "Phones.h"
-#include "Pickups.h"
-#include "Plane.h"
-#include "PlayerSkin.h"
-#include "Population.h"
+#include "renderer/Particle.h"
+#include "objects/ParticleObject.h"
+#include "peds/PedRoutes.h"
+#include "control/Phones.h"
+#include "control/Pickups.h"
+#include "vehicles/Plane.h"
+#include "renderer/PlayerSkin.h"
+#include "peds/Population.h"
 #include "Radar.h"
-#include "Record.h"
+#include "control/Record.h"
 #include "References.h"
-#include "Renderer.h"
-#include "Replay.h"
-#include "Restart.h"
-#include "RoadBlocks.h"
-#include "Rubbish.h"
-#include "SceneEdit.h"
-#include "Script.h"
-#include "Shadows.h"
-#include "Skidmarks.h"
-#include "SetPieces.h"
-#include "SpecialFX.h"
+#include "renderer/Renderer.h"
+#include "control/Replay.h"
+#include "control/Restart.h"
+#include "control/RoadBlocks.h"
+#include "renderer/Rubbish.h"
+#include "control/SceneEdit.h"
+#include "script/Script.h"
+#include "script_commands/commands_peds.h"
+#include "renderer/Shadows.h"
+#include "renderer/Skidmarks.h"
+#include "control/SetPieces.h"
+#include "renderer/SpecialFX.h"
 #include "Stats.h"
 #include "Streaming.h"
 #include "SurfaceTable.h"
-#include "TempColModels.h"
-#include "Timecycle.h"
-#include "TrafficLights.h"
-#include "Train.h"
-#include "TxdStore.h"
+#include "collision/TempColModels.h"
+#include "renderer/Timecycle.h"
+#include "control/TrafficLights.h"
+#include "vehicles/Train.h"
+#include "rw/TxdStore.h"
 #include "User.h"
-#include "VisibilityPlugins.h"
-#include "WaterCannon.h"
-#include "WaterLevel.h"
-#include "Weapon.h"
-#include "WeaponEffects.h"
-#include "Weather.h"
+#include "rw/VisibilityPlugins.h"
+#include "renderer/WaterCannon.h"
+#include "renderer/WaterLevel.h"
+#include "weapons/Weapon.h"
+#include "weapons/WeaponEffects.h"
+#include "renderer/Weather.h"
 #include "World.h"
 #include "ZoneCull.h"
 #include "Zones.h"
-#include "Occlusion.h"
-#include "debugmenu.h"
+#include "renderer/Occlusion.h"
+#include "extras/debugmenu.h"
 #include "Ropes.h"
-#include "WindModifiers.h"
-#include "WaterCreatures.h"
-#include "postfx.h"
-#include "custompipes.h"
-#include "screendroplets.h"
-#include "VarConsole.h"
+#include "renderer/WindModifiers.h"
+#include "renderer/WaterCreatures.h"
+#include "extras/postfx.h"
+#include "extras/custompipes.h"
+#include "extras/screendroplets.h"
+#include "renderer/VarConsole.h"
 #ifdef USE_TEXTURE_POOL
-#include "TexturePools.h"
+#include "rw/TexturePools.h"
 #endif
 
 eLevelName CGame::currLevel;
@@ -528,7 +530,8 @@ bool CGame::Initialise(const char* datFile)
 
 	LoadingScreen("Loading the Game", "Load scripts", nil);
 	PUSH_MEMID(MEMID_SCRIPT);
-	CTheScripts::Init();
+	//CTheScripts::Init();
+	CGame::InitScr();
 	CGangs::Initialise();
 	POP_MEMID();
 
@@ -564,6 +567,7 @@ bool CGame::Initialise(const char* datFile)
 	{
 		CTheScripts::StartTestScript();
 		CTheScripts::Process();
+		CScript;
 		TheCamera.Process();
 	}
 
@@ -580,7 +584,7 @@ bool CGame::Initialise(const char* datFile)
 	VarConsole.Add("X PLAYER COORD", &PlayerCoords.x, 10.0f, -10000.0f, 10000.0f, true);
 	VarConsole.Add("Y PLAYER COORD", &PlayerCoords.y, 10.0f, -10000.0f, 10000.0f, true);
 	VarConsole.Add("Z PLAYER COORD", &PlayerCoords.z, 10.0f, -10000.0f, 10000.0f, true);
-	VarConsole.Add("UPDATE PLAYER COORD", &VarUpdatePlayerCoords, true);
+	VarConsole.BAdd8("UPDATE PLAYER COORD", &VarUpdatePlayerCoords, true);
 #endif
 
 
@@ -694,7 +698,7 @@ void CGame::ReInitGameObjectVariables(void)
 	gPhoneInfo.Initialise();
 
 	PUSH_MEMID(MEMID_SCRIPT);
-	CTheScripts::Init();
+	CScript::Init();
 	CGangs::Initialise();
 	POP_MEMID();
 
@@ -1328,6 +1332,12 @@ void CGame::ProcessTidyUpMemory(void)
 	} while (anim == nil);	// always != nil
 	anim->MoveMemory(true);
 #endif
+}
+
+void
+CGame::InitScr(void)
+{
+	CcommandsPeds::REGISTERSCR();
 }
 
 void

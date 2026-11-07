@@ -3,13 +3,13 @@
 
 #include "templates.h"
 #include "Lists.h"
-#include "Treadable.h"
-#include "Object.h"
-#include "CutsceneObject.h"
-#include "PlayerPed.h"
-#include "Automobile.h"
-#include "DummyPed.h"
-#include "AudioScriptObject.h"
+#include "buildings/Treadable.h"
+#include "objects/Object.h"
+#include "objects/CutsceneObject.h"
+#include "peds/PlayerPed.h"
+#include "vehicles/Automobile.h"
+#include "peds/DummyPed.h"
+#include "audio/AudioScriptObject.h"
 
 typedef CPool<CPtrNode> CCPtrNodePool;
 typedef CPool<CEntryInfoNode> CEntryInfoNodePool;

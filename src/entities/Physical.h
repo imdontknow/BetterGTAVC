@@ -1,8 +1,8 @@
 #ifndef __GTA_PHYSICAL_H__
 #define __GTA_PHYSICAL_H__
 
-#include "Lists.h"
-#include "Timer.h"
+#include "core/Lists.h"
+#include "core/Timer.h"
 #include "Entity.h"
 
 enum {
@@ -174,5 +174,4 @@ public:
 	bool CheckCollision(void);
 	bool CheckCollision_SimpleCar(void);
 };
-
 #endif // __GTA_PHYSICAL_H__

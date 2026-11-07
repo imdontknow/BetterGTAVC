@@ -1,7 +1,7 @@
 #ifndef __GTA_BUILDING_H__
 #define __GTA_BUILDING_H__
 
-#include "Entity.h"
+#include "entities/Entity.h"
 
 class CBuilding : public CEntity
 {

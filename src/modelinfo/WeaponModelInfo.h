@@ -2,7 +2,7 @@
 #define __GTA_WEAPONMODELINFO_H__
 
 #include "SimpleModelInfo.h"
-#include "WeaponType.h"
+#include "weapons/WeaponType.h"
 
 class CWeaponModelInfo : public CSimpleModelInfo
 {

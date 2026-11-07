@@ -1,7 +1,7 @@
 #ifndef __GTA_PHONES_H__
 #define __GTA_PHONES_H__
 
-#include "Physical.h"
+#include "entities/Physical.h"
 
 class CPed;
 class CAnimBlendAssociation;

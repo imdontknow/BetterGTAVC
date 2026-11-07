@@ -1,7 +1,7 @@
 #ifndef __GTA_PATHFIND_H__
 #define __GTA_PATHFIND_H__
 
-#include "Treadable.h"
+#include "buildings/Treadable.h"
 
 class CVehicle;
 class CPtrList;

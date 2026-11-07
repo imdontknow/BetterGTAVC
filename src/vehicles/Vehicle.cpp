@@ -564,30 +564,30 @@ float ROTOR_DEFAULT_DAMAGE = 100.0f;
 bool
 CVehicle::DoBladeCollision(CVector pos, CMatrix &matrix, int16 rotorType, float radius, float damageMult)
 {
-	CVector max(radius, radius, radius);
-	CVector min(-radius, -radius, -radius);
+	CVector vmax(radius, radius, radius);
+	CVector vmin(-radius, -radius, -radius);
 
 	switch(rotorType){
 	case ROTOR_TOP:
 	case ROTOR_BOTTOM:
-		min.z = -ROTOR_SEMI_THICKNESS;
-		max.z = ROTOR_SEMI_THICKNESS;
+		vmin.z = -ROTOR_SEMI_THICKNESS;
+		vmax.z = ROTOR_SEMI_THICKNESS;
 		break;
 	case ROTOR_FRONT:
 	case ROTOR_BACK:
-		min.y = -ROTOR_SEMI_THICKNESS;
-		max.y = ROTOR_SEMI_THICKNESS;
+		vmin.y = -ROTOR_SEMI_THICKNESS;
+		vmax.y = ROTOR_SEMI_THICKNESS;
 		break;
 	case ROTOR_RIGHT:
 	case ROTOR_LEFT:
-		min.x = -ROTOR_SEMI_THICKNESS;
-		max.x = ROTOR_SEMI_THICKNESS;
+		vmin.x = -ROTOR_SEMI_THICKNESS;
+		vmax.x = ROTOR_SEMI_THICKNESS;
 		break;
 	}
 
-	min += pos;
-	max += pos;
-	rotorColModel.boundingBox.Set(min, max);
+	vmin += pos;
+	vmax += pos;
+	rotorColModel.boundingBox.Set(vmin, vmax);
 	rotorColModel.boundingSphere.Set(radius, pos);
 	rotorColSphere.Set(radius, pos, 0, 0);
 	rotorColModel.spheres = &rotorColSphere;
